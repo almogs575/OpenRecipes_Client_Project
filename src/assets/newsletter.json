@@ -1,0 +1,125 @@
+{
+  "type" : "object",
+  "properties" : {
+    "image" : {
+      "title": "imageURL",
+      "type" : "string",
+      "example" : "www.url.jpeg"
+    },
+    "title" : {
+      "title": "title",
+      "type" : "string",
+      "example" : "apple cake"
+    },
+    "vegetarian" : {
+      "title": "vegetarian",
+
+      "type" : "boolean",
+      "example" : true
+    },
+    "vegan" : {
+      "title": "vegan",
+
+      "type" : "boolean",
+      "example" : true
+    },
+    "glutenFree" : {
+      "title": "glutenFree",
+
+      "type" : "boolean",
+      "example" : true
+    },
+    "aggregateLikes" : {
+      "title": "aggregateLikes",
+
+      "type" : "integer",
+      "example" : 10
+    },
+    "readyInMinutes" : {
+      "title": "readyInMinutes",
+
+      "type" : "integer",
+      "example" : 10
+    },
+    "ingredients" : {
+      "title": "ingredients",
+      "type" : "array",
+      "items" : {
+        "type" : "object ",
+        "properties" : {
+          "ingredientName" : {
+            "title" : "ingredientName",
+            "type" : "string"
+          },
+          "amount" : {
+            "title": "amount",
+            "type" : "integer"
+          }
+        }
+      },
+      "example" : [ {
+        "eggs" : 2,
+        "sugar" : 2
+      } ]
+    },
+    "analyzedInstructions" : {
+      "title": "analyzedInstructions",
+      "type" : "array",
+      "items" : {
+        "type" : "object",
+        "properties" : {
+          "steps" : {
+            "type" : "array",
+            "items" : {
+              "type" : "object",
+              "properties" : {
+                "number" : {
+                  "type" : "integer",
+                  "example" : 1
+                },
+                "step" : {
+                  "type" : "string",
+                  "example" : "Remove seeds and veins and wash"
+                },
+                "ingredients" : {
+                  "type" : "array",
+                  "items" : {
+                    "type" : "object",
+                    "properties" : {
+                      "name" : {
+                        "type" : "string",
+                        "example" : "salt-and-pepper"
+                      },
+                      "image" : {
+                        "type" : "string",
+                        "example" : "salt-and-pepper.jpg"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "servings" : {
+      "title": "servings",
+
+      "type" : "integer",
+      "example" : 4
+    },
+    "recipeOwner" : {
+      "title": "recipeOwner",
+
+      "type" : "string",
+      "example" : "mother"
+    },
+    "inEvent" : {
+      "title": "inEvent",
+
+      "type" : "string",
+      "example" : "Hanuka"
+    }
+  }
+}
