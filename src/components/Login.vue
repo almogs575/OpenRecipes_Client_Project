@@ -4,7 +4,6 @@
       <h2 class="mb-0">Log In</h2>
     </b-row>
     <br>
-    <!-- <h1 class="title">Login</h1> -->
     <b-form @submit.prevent="onLogin">
       <div class="textbox">
         <p class="h4 mb-2">
@@ -23,8 +22,6 @@
           </b-form-invalid-feedback>
         </b-form-group>
       </div>
-      <!-- lock-fill -->
-      <!-- person-fill -->
       <div class="textbox">
         <p class="h4 mb-2">
           <b-icon icon="lock-fill"></b-icon>
@@ -52,9 +49,7 @@
     <b-alert class="mt-2" v-if="form.submitError" variant="warning" dismissible show>
       Login failed: {{ form.submitError }}
     </b-alert>
-    <!-- <b-card class="mt-3" header="Form Data Result">
-      <pre class="m-0">{{ form }}</pre>
-    </b-card> -->
+
   </b-container>
 </template>
 
@@ -95,15 +90,9 @@ export default {
         const response = await this.axios.post("http://localhost:3000/login", {
           username: this.form.username,
           password: this.form.password
-          // withCredentials: true
         });
-
         console.log(response);
-        // this.$root.loggedIn = true;
-        //console.log(this.$root.store.login);
         this.login(this.form.username);
-        // this.$root.store.login(this.form.username);
-        // this.$emit("update");
          this.$emit("new-item-added");
         this.$router.push("/").catch(() => console.log("asd"));
       } catch (err) {
@@ -113,13 +102,11 @@ export default {
       }
     },
     onLogin() {
-      // console.log("login method called");
       this.form.submitError = undefined;
       this.$v.form.$touch();
       if (this.$v.form.$anyError) {
         return;
       }
-      // console.log("login method go");
       this.Login();
     }
   }

@@ -93,7 +93,6 @@
 <script>
 import RecipeIngredients from "../components/RecipeIngredients.vue";
 import RecipeInstructions from "../components/RecipeInstructions.vue";
-// import background from "../assets/backgrounds3.jpg";
 
 export default {
   components: {
@@ -105,7 +104,6 @@ export default {
       indeterminate: true,
       bodyBgVariant: "light",
 
-      // background: { backgroundImage: "url(../assets/backgrounds3.jpg)" },
       form: {
         title: "",
         image: "",
@@ -126,26 +124,16 @@ export default {
     };
   },
   methods: {
-    // addToIngredients(new_item) {
-    //   this.form.ingredients.push(new_item);
-    //   this.new_item = "";
-    // },
-    // addToIntructions(new_item){
-    //   this.form.analyzedInstructions.steps.push(new_item);
-    //   this.new_item = "";
-    // },
+
 
     removeItem(index) {
       this.tasks.splice(index, 1);
     },
 
     async onSubmit() {
-      // evt.preventDefault();
       try {
-        // let v1,v2,g;
         
 
-        //console.log(this.form.username);
         const response = await this.axios.post(
           "http://localhost:3000/profile/newRecipe",
           {
@@ -164,24 +152,16 @@ export default {
             inEvent: this.form.inEvent
           }
         );
-        // t;
-        // this.$router.push("/login");
+
         alert("Recipe added successfully!!!");
         console.log(response);
       } catch (err) {
         console.log(err);
-        // this.form.submitError = err.response.data.message;
       }
 
-      // alert(JSON.stringify(this.form));
     },
     onReset(evt) {
       evt.preventDefault();
-      // Reset our form values
-      // this.form.email = "";
-      // this.form.name = "";
-      // this.form.food = null;
-      // this.form.checked = [];
       (this.form.title = ""),
         (this.form.image = ""),
         (this.form.vegetarian = false),
@@ -207,13 +187,7 @@ export default {
 <style lang="scss">
 h4 {
   font-family: "Comic Sans MS", cursive, sans-serif;
-  // text-align: center;
-  // justify-content: center;
-  // align-items: center;
 }
-// /* b-form-group{
-//   font-weight: bold;
-// } */
 .modal-body {
   background-image: url("../assets/recipeback.jpg");
   background-repeat: no-repeat;

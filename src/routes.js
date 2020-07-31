@@ -1,18 +1,3 @@
-// import Main from "./pages/MainPage";
-// import NotFound from "./pages/NotFoundPage";
-
-// export const router = new Router({
-//   mode: 'history',
-//   routes: [
-//     { path: '/', component: HomePage },
-//     { path: '/login', component: LoginPage },
-//     { path: '/register', component: RegisterPage },
-
-//     // otherwise redirect to home
-//     { path: '*', redirect: '/' }
-//   ]
-// });
-
 const routes = [
   {
     path: "/",
@@ -43,9 +28,6 @@ const routes = [
     path: "/recipe/:recipeId",
     name: "recipe",
     component: () => import("./pages/RecipeViewPage"),
-    // props: {
-    //   personal1: false,
-    //   },
   },
   {
     path: "/about",
@@ -101,12 +83,6 @@ const routes = [
       requiresAuth: true,
     }
   },
-
-
-
-
-
-
 ];
 
 export default routes;

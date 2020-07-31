@@ -1,18 +1,12 @@
 <template>
   <div>
     <b-table hover ref="selectableTable" :select-mode="selectMode" :items="itemsIn" :fields="fields" @row-selected="onRowSelected" responsive="sm">
-      <!-- Example scoped slot for select state illustrative purposes -->
       <template v-slot:cell(selected)="row">
-
         <b-form-group>
           <input type="checkbox" v-model="row.item.selected" />
-
         </b-form-group>
-
       </template>
-
     </b-table>
-
   </div>
 </template>
 
@@ -23,7 +17,6 @@ export default {
   computed: mapGetters(["allRecipesCheckList", "allRecipesPrepareList"]),
   data() {
     return {
-      //  modes: ['multi', 'single', 'range'],
       fields: ["selected", "Equipment", "Ingredients", "Instructions"],
       selectMode: "multi",
       selected: [],
@@ -42,7 +35,6 @@ export default {
     }
   },
   mounted() {
-    // this.test();
     this.startPreper();
   },
   beforeDestroy() {
@@ -52,9 +44,7 @@ export default {
         ...mapActions(['addToPrepareList','addToCheckList','filterTheRecipes']),
 
     startPreper() {
-      //  if(this.preparing){
       let recipe_id = this.recipe.id;
-      // let a= localStorage.getItem("recipesCheckListIn");
 
       try {
         let recipesFromMemory = this.allRecipesCheckList;
@@ -100,7 +90,6 @@ export default {
               this.addToCheckList(recipesFromMemory);
             } else {
               this.sendData = recipesFromMemory;
-              // this.sendData.push(send);
               added = true;
             }
           }
@@ -109,12 +98,10 @@ export default {
         }
       }
 
-      // else this.sendData.push(send);
       if (!replaced || added) {
         this.sendData.push(send);
         this.addToCheckList(this.sendData);
       }
-      // this.$forceUpdate();
         this.RecipesFilter();
     },
 

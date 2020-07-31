@@ -1,40 +1,38 @@
 <template>
-<div>
-      <table align="center" class="table">
-        <thead class="thead-dark">
-          <tr>
-            <th scope="col">Recipe Name</th>
-            <th scope="col">Progress</th>
-            <th scope="col">Delete</th>
+  <div>
+    <table align="center" class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Recipe Name</th>
+          <th scope="col">Progress</th>
+          <th scope="col">Delete</th>
 
-          </tr>
-        </thead>
-        <draggable tag="tbody">
-          <tr v-for="(item,index) in allRecipesToMeal" :key="index">
-                        <router-link style="color: azure;   font-weight: bold; font-size:20px" :to="{ name: 'preparing', params: { recipeId: item.id } }">
+        </tr>
+      </thead>
+      <draggable tag="tbody">
+        <tr v-for="(item,index) in allRecipesToMeal" :key="index">
+          <router-link style="color: azure;   font-weight: bold; font-size:20px" :to="{ name: 'preparing', params: { recipeId: item.id } }">
             <td style="width:50%" scope="row">{{ item.name }}</td>
-                        </router-link>
-            <td style="width:50%">
-              <b-progress :max="item.stepsTotal" height="2rem" width=200px show-progress animated>
-                <b-progress-bar :value="item.curSteps.length">
-                  <strong>{{item.curSteps.filter(Boolean).length}} /{{item.stepsTotal}}</strong>
-                </b-progress-bar>
-              </b-progress>
-            </td>
-            <td>
-          <b-button @click="deleteRecipe(index,item.id)" variant="danger" size="md">Delete</b-button>
-            </td>
+          </router-link>
+          <td style="width:50%">
+            <b-progress :max="item.stepsTotal" height="2rem" width=200px show-progress animated>
+              <b-progress-bar :value="item.curSteps.length">
+                <strong>{{item.curSteps.filter(Boolean).length}} /{{item.stepsTotal}}</strong>
+              </b-progress-bar>
+            </b-progress>
+          </td>
+          <td>
+            <b-button @click="deleteRecipe(index,item.id)" variant="danger" size="md">Delete</b-button>
+          </td>
 
-          </tr>
-        </draggable>
-      </table>
+        </tr>
+      </draggable>
+    </table>
 
-<b-row class="justify-content-md-center"> 
-    <b-button @click="deleteAll" variant="danger" size="lg">Delete All Recipes</b-button>
-</b-row>
-        <!-- <b-button @click="asd" variant="danger" size="md">delete</b-button> -->
-
-    </div>
+    <b-row class="justify-content-md-center">
+      <b-button @click="deleteAll" variant="danger" size="lg">Delete All Recipes</b-button>
+    </b-row>
+  </div>
 
 </template>
 

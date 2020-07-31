@@ -6,17 +6,17 @@
 
     <RecipesMealTable />
     <br>
-  <br>
-<b-row class="justify-content-md-center">
-  <b-col>
-    </b-col>
-  <b-col class="try" >
-    <h4 >Press The Recipe's Name For Continue Praparing</h4>
-    <h4>Change The Order By Drag And Drop Recipe's Name</h4>
-    </b-col>
-     <b-col>
-    </b-col>
-</b-row>
+    <br>
+    <b-row class="justify-content-md-center">
+      <b-col>
+      </b-col>
+      <b-col class="try">
+        <h4>Press The Recipe's Name For Continue Praparing</h4>
+        <h4>Change The Order By Drag And Drop Recipe's Name</h4>
+      </b-col>
+      <b-col>
+      </b-col>
+    </b-row>
   </b-container>
 
 </template>
@@ -33,26 +33,10 @@ export default {
   created() {
     this.getRecipes();
   },
-  // data() {
-  //   return {
-  //     recipeIDs: [],
-  //     recipesObj: [],
-  //     recipesObjToSend: [],
-  //     recipesBars: []
-  //   };
-  // },
-
   methods: {
-    // deleteAll(){
-    //     this.recipesObjToSend=[];
-    // },
-
     getRecipes() {
-
-
       if(this.allRecipesPrepareList.length==0)
 this.$router.push("/").catch(() => console.log("asd"));
-
     }
   }
 };
@@ -72,7 +56,6 @@ h2 {
 .table {
   display: table;
   text-align: center;
-  // background-color: black;
 }
 
 .row {
@@ -84,7 +67,6 @@ h2 {
 }
 
 .row div {
-  // margin:0 auto;
   display: table-cell;
   width: 100px;
 }

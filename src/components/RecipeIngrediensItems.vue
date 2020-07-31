@@ -1,4 +1,4 @@
-  
+
 <template>
   <ol>
     <span v-for="(task, index) in tasks" :key="index">

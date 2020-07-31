@@ -4,20 +4,10 @@
 
 <script>
 import RecipeFullInfo from "../components/RecipeFullInfo";
-// import RecipePreviewData from '../components/RecipePreviewData'
-
 export default {
   components: {
     RecipeFullInfo
-    //  RecipePreviewData
   },
-  // props: {
-  //   personal1: {
-  //     type: Boolean,
-  //     required: true
-  //   },
-  // },
-
   data() {
     return {
       recipeInfo: {},

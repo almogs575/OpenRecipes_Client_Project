@@ -17,7 +17,6 @@ export default {
   props: { initialTasks: Array },
   data() {
     return {
-      // header: "My TODO List",
       tasks: this.initialTasks
     };
   },

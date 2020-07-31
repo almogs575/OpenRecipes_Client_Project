@@ -18,13 +18,19 @@ const actions = {
         localStorage.setItem("username", username);
     },
     logout({ commit }) {
-        // commit('setUsername', "");
         commit('setCheckList', []);
         commit('setPrepareList', []);
         commit('setFilterRecipes', []);
         localStorage.removeItem("username");
         commit('setUsername', "");
-
+      if (localStorage.lastSearch) {
+            localStorage.removeItem("lastSearch");
+            localStorage.removeItem("keyword");
+            localStorage.removeItem("diet");
+            localStorage.removeItem("intolerances");
+            localStorage.removeItem("number");
+            localStorage.removeItem("sortChoice");
+          }
 
 
         // localStorage.setItem("username", username);

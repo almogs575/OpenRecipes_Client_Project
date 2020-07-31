@@ -1,7 +1,6 @@
 <template>
   <b-container class="recipe-body">
     <br />
-
     <h2>{{ recipe.title }}</h2>
     <br />
     <b-card no-body class="overflow-hidden" style="background: none;">
@@ -45,11 +44,7 @@
       </b-row>
       <br />
       <b-row class="justify-content-md-center">
-        <!-- <b-col col lg="20"> -->
         <RecipePrepareTable :items="itemsToSend" :recipe="recipe" />
-        <!-- </b-col> -->
-     
-
       </b-row>
     </div>
     <div v-else>
@@ -111,14 +106,9 @@ export default {
     ,
   data() {
     return {
-      //  fields: ['selected', 'isActive', 'age', 'first_name', 'last_name'],
       itemsToSend: [],
-      //     selectMode: 'multi',
-      //     selected: [],
-      // items: [],
       recipesPrepar: Object,
       curSteps: [],
-      // updatedcurSteps: [],
       idStepAndCur: [],
       steps: [],
       ingredientsName: [],
@@ -160,9 +150,6 @@ export default {
         element => {
               return element.name;
             });
-        
-    // this.equipmentName= [];
-
 
       for (let i = 0; i < this.steps.length; i++) {
         this.itemsToSend[i] = {
@@ -197,9 +184,6 @@ export default {
         } else return (element = "");
       });
 
-      //       this.ingridentsName = this.ingridentsName.filter(function (el) {
-      //       return el != null;
-      // });
       this.equipmentName = this.recipe.analyzedInstructions.steps.map(
         element => {
           if (element.equipment.length > 0)
@@ -216,7 +200,6 @@ export default {
           // console.log(element);
         } else return (element = "");
       });
-      // fields: ['Done', 'Equipment', 'Ingredients', 'Instructions'],
 
       for (let i = 0; i < this.steps.length; i++) {
         this.itemsToSend[i] = {
@@ -237,9 +220,7 @@ export default {
       }
 
       try {
-        //  let recipesPreparMemory= JSON.parse(localStorage.getItem('recipesPreparIn'));
         let recipesPreparMemory=this.allRecipesPrepareList;
-// recipesPreparMemory
         if (recipesPreparMemory) {
           if (recipesPreparMemory.length > 0) {
             let i = recipesPreparMemory.findIndex(
@@ -298,12 +279,6 @@ export default {
         }
         this.filterTheRecipes(filterList);
       } 
-
-
-
-
-
-
     }
    
   }

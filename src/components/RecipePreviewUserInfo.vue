@@ -6,7 +6,6 @@
       <b-button v-else variant="outline-info">
       <b-icon icon="heart" font-scale="2" v-on:click="addToFavorites()" variant="danger">Add To Favorites</b-icon>
     </b-button>
-      <!-- <b-icon icon="heart" font-scale="2" v-else v-on:click="addToFavorites()" variant="danger">Add To Favorites</b-icon> -->
     </b-row>
   </div>
 </template>
@@ -30,12 +29,10 @@ export default {
   data: () => ({
     watched: false,
     saved: false
-    //   recipe: recipe,
-    //   favorite: false,
+  
   }),
   created() {
     this.getDetails();
-    // this.updateLastRecipes();
   },
  
 
@@ -52,12 +49,6 @@ export default {
           );
           alert("The recipe has been saved");
           this.saved=true;
-          // this.saved.$forceUpdate();
-
-          // console.log("response=" + response.data + " id= " + this.recipe.id);
-          // console.log(response.data);
-          //   this.watched=response.data.watched;
-          // this.saved=response.data.saved;
         }
       } catch (error) {
         console.log(error);
@@ -73,8 +64,6 @@ export default {
               params: { id: this.recipe.id }
             }
           );
-          // console.log("response=" + response.data + " id= " + this.recipe.id);
-          // console.log(response.data);
           this.watched = response.data.watched;
           this.saved = response.data.saved;
         }

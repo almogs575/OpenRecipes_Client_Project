@@ -16,7 +16,6 @@
       <i v-if="recipe.servings" class="fa fa-cutlery fa-2x" aria-hidden="true" style="color: blue; margin-right:10px"></i>
       <span style="margin-right:5px">{{recipe.aggregateLikes}}</span>
       <i class="fa fa-thumbs-up fa-2x" aria-hidden="true" style="color: blue; margin-right:10px"></i>
-      <!-- <b-icon icon="hand-thumbs-up" style="color: blue; margin-right:10px"></b-icon> -->
       <span style="margin-right:5px">{{recipe.readyInMinutes}}</span>
       <b-icon icon="clock-fill" font-scale="2" style="color: blue; "></b-icon>
     </b-row>
