@@ -27,7 +27,7 @@
     "vue-simple-alert": "^1.1.1",
     "vuedraggable": "^2.24.0",
     "vuelidate": "^0.7.5",
-    "vuetify": "^2.3.1",
+    "vuetify": "^2.6.10",
     "vuex-search": "^2.2.5"
   },
   "devDependencies": {
